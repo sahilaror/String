@@ -1,0 +1,168 @@
+ANS 1	class a{
+		  public static void main(String[] args) {
+		String s="sahil arora"; 
+		 StringBuilder sb1=new StringBuilder();
+        for (int i=0; i<s.length(); i++){
+           char ch1 =s.charAt(i);
+          int indx =s.indexOf(ch1,i+1);
+          if (indx==-1){
+            sb1.append(ch1);
+          }
+        }
+        System.out.println(sb1);
+	}
+	}
+
+ANS 2 
+	class a{
+    public static void main(String[] args) {
+        String s="sahil arora";
+        char ch[]=s.toCharArray();
+        for (int i=0; i<ch.length; i++){
+            for (int j=i+1; j<ch.length; j++){
+                if (ch[i]==ch[j]){
+                    System.out.println(ch[j]);
+                }
+            }
+        }
+    }
+}
+
+ANS 3
+	class a{
+    public static void main(String[] args) {
+        String s1="2552";
+        String s2="";
+
+        for (int i=0; i<s1.length(); i++){
+            s2=s2+s1.charAt(i);
+        }
+        if (s1.equals(s2)){
+            System.out.println("it is a palindrome");
+        }
+        else {
+            System.out.println("it is not a palindrome");
+        }
+    }
+}
+
+
+ANS 4
+	class a {
+    public static void main(String[] args) {
+        String s1 = "sahil arora";
+        int vowels = 0;
+        int consonant = 0;
+
+        for (int i = 0; i < s1.length(); i++) {
+            if (s1.charAt(i) == 'a' || s1.charAt(i) == 'e' || s1.charAt(i) == 'i' || s1.charAt(i) == 'o' || s1.charAt(i) == 'u') {
+                vowels++;
+            } else {
+                consonant++;
+            }
+        }
+        System.out.println("the total no of vowels in string is:-"+vowels);
+        System.out.println("the total no of consonant  in string is:-"+consonant);
+    }
+}
+
+ANS 5
+	
+	import java.util.Arrays;
+
+class a{
+    public static void main(String[] args) {
+        String s1="the CLASSroom";
+        String s2="school master";
+
+        s1=s1.replace(" ","");
+        s2=s2.replace(" ","");
+
+        s1=s1.toLowerCase();
+        s2=s2.toLowerCase();
+
+        char s3[]=s1.toCharArray();
+        char s4[]=s2.toCharArray();
+
+        Arrays.sort(s3);
+        Arrays.sort(s4);
+
+        if (Arrays.equals(s3,s4)){
+            System.out.println("it is anagram");
+        }
+        else {
+            System.out.println("it is not anagram");
+        }
+    }
+}
+
+
+ANS 6
+
+	class a {
+    public static boolean unique(String s1) {
+        char ch[]=s1.toCharArray();
+        for (int i=0; i<ch.length; i++)
+            for(int j=i+1; j<ch.length; j++)
+                if (ch[i]==ch[j])
+                    return false;
+        return true;
+    }
+
+    public static void main(String[] args) {
+        String s1="sahil arora";
+        if (!unique(s1)){
+            System.out.println("\n all the character in the string is unique");
+        }
+        else {
+            System.out.println("all the character in the string is not unique");
+        }
+    }
+}
+
+
+
+ANS 7
+ 
+	import java.util.*;
+ class a{
+
+
+    static char getMaxOccurringChar(String str) {
+
+
+        HashMap<Character, Integer> mp = new HashMap<>();
+
+
+        int n = str.length();
+
+        // to store answer
+        char ans = 0;
+
+        int cnt = 0;
+
+        for(int i = 0; i < n; i++) {
+
+            char c = str.charAt(i);
+            mp.put(c, mp.getOrDefault(c, 0) + 1);
+
+
+            if(cnt < mp.get(c)) {
+                ans = c;
+                cnt = mp.get(c);
+            }
+        }
+
+        return ans;
+    }
+
+
+    public static void main(String[] args) {
+        String str = "sahil arora";
+        System.out.println("Max occurring character is: " + getMaxOccurringChar(str));
+    }
+}
+ 
+
+
+
