@@ -97,7 +97,40 @@ class a{
 }
 
 
+
 ANS 6
+
+	class a    {
+    public static void main(String[] args) {
+       String S1="ABCD EFGHIJK LMNO PQRSTUVWXYZ";
+       boolean flad=false;
+       S1=S1.replace(" ","");
+
+       char ch[]=S1.toCharArray();
+
+       int ar[]=new int[26];
+
+       for (int i=0; i<=ch.length-1; i++){
+           ar[ch[i]-65]++;
+
+       }
+       for (int i=0; i<=ar.length-1; i++){
+           if (ar[i]==0) {
+               System.out.println("it is not a pangram");
+               flad = true;
+           }
+           }
+            if (flad==false){
+                System.out.println("it is a pangram");
+            }
+           }
+       }
+
+
+
+
+
+ANS 7
 
 	class a {
     public static boolean unique(String s1) {
@@ -122,7 +155,7 @@ ANS 6
 
 
 
-ANS 7
+ANS 8
  
 	import java.util.*;
  class a{
